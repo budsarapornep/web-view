@@ -20,7 +20,7 @@ class _WebViewContainerState extends State<WebViewContainer> {
   final Completer<WebViewController> _controllerCompleter =
       Completer<WebViewController>();
 
-  Future<void> _onWillPop(BuildContext context) async {
+  Future<bool> _onWillPop(BuildContext context) async {
     print("onwillpop");
     if (await controller.canGoBack()) {
       controller.goBack();
@@ -71,7 +71,9 @@ class _WebViewContainerState extends State<WebViewContainer> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-      onWillPop: () => _onWillPop(context),
+      onWillPop: () {
+        _onWillPop(context);
+      },
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(

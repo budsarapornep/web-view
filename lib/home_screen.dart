@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 50.0, vertical: 15.0),
                   child: Text(
-                    'Sumit',
+                    'Summit',
                     style: TextStyle(color: Colors.white),
                   ),
                   onPressed: () {
